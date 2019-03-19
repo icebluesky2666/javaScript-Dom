@@ -103,6 +103,56 @@
         {{selectLike2}}
       </li>
     </ul>
+    <h2>Form 表单获取值</h2>
+    <ul>
+      <form action="" name="login" id="login" class="login">
+        <div class="item">
+          <label for="">姓名</label>
+          <div class="valueBox"><input type="text" placeholder="v-module 获取数值" name="inputValue" class="input-el"></div>
+        </div>
+        <div class="item">
+          <label for="">性别</label>
+          <div class="valueBox">
+            <input type="radio" name="sexF" value="男" />男
+            <input type="radio" name="sexF" value="女" />女
+          </div>
+        </div>
+        <div class="item">
+          <label for="">爱好</label>
+          <div class="valueBox">
+            <input type="checkbox" name="likeF" value="篮球">篮球
+            <input type="checkbox" name="likeF" value="足球">足球
+            <input type="checkbox" name="likeF" value="羽毛球">羽毛球
+          </div>
+        </div>
+      </form>
+      <button class="button-click" @click="getForm()"><i class="iconfont myicon-lianjie" style="margin:0 5px 0 0;"></i><span>获取表单的值</span></button>
+
+      <p>获取的radio:{{form.radio}}</p>
+      <p>获取的checkbox:{{form.checkbox }}</p>
+      <p>获取的input:{{form.input}}</p>
+    </ul>
+    <h2>Tab 选项卡</h2>
+    <ul>
+      <div style="width:500px;">
+        <ul class="tab-url">
+          <li @click="selectTab = 1">用地保障情况</li>
+          <li @click="selectTab = 2">总体分布情况</li>
+          <li @click="selectTab = 3">用地审批情况</li>
+        </ul>
+        <div class="tab-content">
+          <div v-show="selectTab == 1">
+            内容一
+          </div>
+          <div v-show="selectTab == 2">
+            内容二
+          </div>
+          <div v-show="selectTab == 3">
+            内容三
+          </div>
+        </div>
+      </div>
+    </ul>
 
   </div>
 </template>
@@ -130,7 +180,13 @@ export default {
       inputMsg: '',
       inputMsg2: '',
       selectLike: '',
-      selectLike2: ''
+      selectLike2: '',
+      form: {
+        radio: '',
+        checkbox: [],
+        input: ''
+      },
+      selectTab: 1
     }
   },
   methods: {
@@ -160,6 +216,18 @@ export default {
           this.selectLike2 = e.value
         }
       })
+    },
+    getForm: function() {
+      // 获取radio值
+      this.form.radio = document.login.sexF.value
+      // 获取checkbox
+      document.login.likeF.forEach(e => {
+        if (e.checked) {
+          this.form.checkbox.push(e.value)
+        }
+      })
+      // 获取input
+      this.form.input = document.login.inputValue.value
     }
   }
 }
@@ -230,5 +298,52 @@ a {
 .input-el:focus {
   outline: none;
   border-color: #409eff;
+}
+/*form 表单样式*/
+.login {
+  width: 450px;
+}
+.login > .item {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.valueBox {
+  left: 0;
+  margin-left: 100px;
+  box-sizing: border-box;
+  line-height: 40px;
+}
+.login label {
+  width: 80px;
+  margin-right: 20px;
+  float: left;
+  line-height: 40px;
+}
+/*tab标签页*/
+.tab-url > li {
+  padding: 12px 20px;
+  float: left;
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  background-color: #eee;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.tab-url > li:hover {
+  border: 1px solid #c6e2ff;
+  background-color: #ecf5ff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: #409eff;
+}
+.tab-url {
+  overflow: hidden;
+}
+.tab-content > div {
+  height: 250px;
+  padding-left: 32px;
+  box-sizing: border-box;
 }
 </style>
