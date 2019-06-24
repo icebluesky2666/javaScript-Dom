@@ -1,0 +1,124 @@
+@import url('normalize.css');
+.hide {
+  display: none;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  background-color: #334;
+  background-image: url(../imgs/background.gif);
+  background-position: top;
+  background-repeat: repeat-x;
+}
+#about header {
+  background-image: url(../imgs/lineup.gif);
+}
+#photos header {
+  background-image: url(../imgs/basshead.gif);
+}
+#live header {
+  background-image: url(../imgs/bassist.gif);
+}
+#contact header {
+  background-image: url(../imgs/drummer.gif);
+}
+body {
+  color: #fb5;
+  font-size: 76%;
+  font-family: "Helvetica", "Arial", sans-serif;
+  width: 80em;
+  margin: 1em auto;
+}
+body header {
+  background-image: url(../imgs/guitarist.gif);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  color: #ec8;
+  background-color: #334;
+  border: #667 solid .1em;
+}
+body header .banner {
+  display: block;
+}
+body header nav {
+  color: #445;
+  border-color: #667;
+  padding-left: 10%;
+  text-align: center;
+  background-color: #789;
+  background-image: url(../imgs/navbar.gif);
+  background-repeat: repeat-x;
+  background-position: bottom left;
+}
+body header nav ul {
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+  border-left-width: .1em;
+  border-left-style: solid;
+  border-color: #99a;
+  display: block;
+  zoom: 1;
+}
+body header nav ul li {
+  display: inline;
+}
+body header nav ul li a {
+  display: block;
+  float: left;
+  padding: .5em 2em;
+  border-right: .1em solid;
+  border-color: #99a;
+  text-decoration: none;
+  font-weight: bold;
+}
+body header nav ul li a:link {
+  color: #eef;
+  background-color: transparent;
+  border-color: #99a;
+}
+body header nav ul li a:visited {
+  color: #eef;
+  background-color: transparent;
+  border-color: #99a;
+}
+body header nav ul li a:active {
+  color: #eef;
+  background-color: #799;
+}
+body header nav ul li a:hover {
+  color: #445;
+  background-color: #eb6;
+}
+body header nav ul:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+body article {
+  border-width: .1em;
+  border-style: solid;
+  border-top-width: 0;
+  padding: 2em 10%;
+  line-height: 1.8em;
+  color: #223;
+  background-color: #edc;
+  border-color: #667;
+}
+body article h1 {
+  font-family: "Georgia", "Times New Roman", sans-serif;
+  font: 2.4em normal;
+}
+article section {
+  margin: 1em 0;
+}
+article section h2 {
+  font-family: "Georgia", "Times New Roman", sans-serif;
+  font: 1.8em normal;
+  margin-top: 1em;
+}

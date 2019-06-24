@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dom 编程的艺术</title>
+</head>
+<style>
+    #imgBox{
+      width: 67px;
+      height: 62px;
+    }
+</style>
+<body>
+  <ul class="title2"><li><a href="./imgs/disport.png" onclick="changeImg(event,this); return false;">disport</a></li><li><a href="./imgs/feature.png" onclick="changeImg(event,this); return false;">feature</a></li><li><a href="./imgs/food_n.png" onclick="changeImg(event,this); return false;">food_n</a></li></ul>
+  <div>
+    <img class="title" name="imgName" id="imgBox" src="" alt="">
+    <p>标题</p>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>

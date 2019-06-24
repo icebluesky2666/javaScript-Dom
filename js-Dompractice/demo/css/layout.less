@@ -1,0 +1,125 @@
+@import url('./common.less');
+*{
+  padding: 0;
+  margin:0;
+} 
+html{
+  background-color: #334;
+  background-image: url(../imgs/background.gif);
+  background-position: top;
+  background-repeat: repeat-x;
+  
+}
+// header不同
+#about header {
+	background-image: url(../imgs/lineup.gif);
+}
+
+#photos header {
+	background-image: url(../imgs/basshead.gif);
+}
+
+#live header {
+	background-image: url(../imgs/bassist.gif);
+}
+
+#contact header {
+	background-image: url(../imgs/drummer.gif);
+}
+
+body{
+  color: #fb5;
+  font-size: 76%;
+  font-family: "Helvetica", "Arial", sans-serif;
+  width: 80em;
+  margin: 1em auto;
+
+  header{
+    background-image: url(../imgs/guitarist.gif);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    color: #ec8;
+    background-color: #334;
+    border: #667 solid .1em;
+    .banner{
+      display: block; 
+    }
+    nav{
+      color: #445;
+      border-color: #667;
+      padding-left: 10%;
+      text-align: center;
+      background-color: #789;
+      background-image: url(../imgs/navbar.gif);
+      background-repeat: repeat-x;
+      background-position: bottom left;
+      ul{
+        padding:0;
+        width: 100%;
+        overflow: hidden;
+        border-left-width: .1em;
+        border-left-style: solid;
+        border-color: #99a;
+        li{
+          display: inline;
+          a{
+            display: block;
+            float: left;
+            padding: .5em 2em;
+            border-right: .1em solid;
+            border-color: #99a;
+            text-decoration: none;
+            font-weight: bold;
+            &:link{
+              color: #eef;
+              background-color: transparent;
+              border-color: #99a;
+            }
+            &:visited{
+              color: #eef;
+              background-color: transparent;
+              border-color: #99a
+            }
+            &:active{
+              color: #eef;
+              background-color: #799;
+            }
+            &:hover{
+              color: #445;
+              background-color: #eb6;
+            }
+            
+          }
+        }
+        .clearfix();
+      }
+    }
+  }
+  article{
+    border-width: .1em;
+    border-style: solid;
+    border-top-width: 0;
+    padding: 2em 10%;
+    line-height: 1.8em;
+    color: #223;
+    background-color: #edc;
+    border-color: #667;
+    h1{
+      font-family: "Georgia", "Times New Roman", sans-serif;
+      font: 2.4em normal;
+    }
+  }
+}
+// about
+article{
+  section{
+    margin: 1em 0;
+    h2{
+      font-family: "Georgia", "Times New Roman", sans-serif;
+      font: 1.8em normal;
+      margin-top: 1em;
+    }
+  }
+}
+
+ 
