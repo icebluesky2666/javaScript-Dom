@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    ul,li{
+      list-style: none; 
+    }
+  </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <ul id="parent-js"></ul>
+    <script>
+      let count = 30000;
+      let fix = 3000;
+      let ndParent = document.getElementById('parent-js');
+      if(!ndParent){
+        return;
+      }
+
+      function addNode(){
+        let preNode = document.createDocumentFragment();
+        let fixCopy = fix;
+        for(fixCopy;fixCopy>0;fixCopy--){
+          var tmpnode = document.createElement('li');
+          tmpnode.index = count;
+          tmpnode.innerText = count;
+          
+          preNode.appendChild(tmpnode);
+          count--;
+        }
+        ndParent.appendChild(preNode);
+        if(count == 0){
+          return;
+        }
+        window.requestAnimationFrame(addNode);
+      }
+
+      function addEvent(){
+        ndParent.addEventListener('click',function(e){
+          alert(e.target.index)
+        })
+      }
+      function init(){
+        addEvent();
+        window.requestAnimationFrame(addNode);
+      }
+
+      init();
+    </script>
+</body>
+</html>

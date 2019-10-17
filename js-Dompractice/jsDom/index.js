@@ -14,7 +14,7 @@ function changeImg(event,node){
 window.onload = function(){
 /*属性api */
 
-  //hildNode
+  //childNode
   var ulnode = document.getElementsByTagName('ul')[0];
   var childs = ulnode.childNodes;
   console.log('ul的childNode ： ',childs);
